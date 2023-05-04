@@ -1,0 +1,45 @@
+﻿@page
+@model SecondProject.Pages.Products.CreateModel
+@{
+}
+<br />
+<h2 class="h2 text-align-centered">Add Products</h2>
+@if (Model.errorMessage.Length>0)
+{
+    <div class="alert-alert-warning alert-dismissible fade show">
+        <strong>@Model.errorMessage</strong>
+        <button class="btn btn-close" data-bs-dismiss="alert" aria-lable="close"></button>
+    </div>
+}
+<form method="POST">
+    <div class="row mb-1">
+        <label class="col-sm-1 col-form-lable">Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="name" value="@Model.productInfo.proct_name"/>
+        </div>
+    </div>
+    
+    <div class="row mb-1">
+        <label class="col-sm-1 col-form-lable">Price</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="price" value="@Model.productInfo.product_price"/>
+        </div>
+    </div>
+
+    @if (Model.successmessage.Length>0)
+{
+    <div class="alert-alert-success alert-dismissible fade show">
+        <strong>@Model.successmessage</strong>
+        <button class="btn btn-close" data-bs-dismiss="alert" aria-lable="close"></button>
+    </div>
+}
+
+
+    <div class="row mb-1">
+        <div class="offset-sm-1 col-sm-1 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-secondary" href="/Products/Index">Back</a>
+        </div>
+    </div>
+    
+</form>

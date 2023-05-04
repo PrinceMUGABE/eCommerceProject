@@ -1,0 +1,45 @@
+﻿@page
+@model SecondProject.Pages.Clients.AdminViewModel
+@{
+}
+
+<br />
+<h2>Manager Clients</h2>
+<a class="btn btn-primary" href="/Clients/Create">Add Client</a>
+
+<div class="table-responsive-sm">
+<table class="table table-sm table-hover table-borderless">
+    <thead class="table-primary">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>ProductID</th>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>CreatedDate</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listClients)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.phone</td>
+                <td>@item.product_id</td>
+                <td>@item.product_name</td>
+                <td>@item.quantity</td>
+                <td>@item.price</td>
+                <td>@item.created_date</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Users/Edit?id=@item.id">Edit</a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

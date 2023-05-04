@@ -1,0 +1,50 @@
+﻿@page
+@model SecondProject.Pages.Users.BossViewModel
+@{
+}
+
+<br />
+<h2 class="h2" text-align="center">Manage Users</h2>
+<a class="btn btn-primary col-sm-1" href="/Users/Create">Add User</a>
+
+<div class="table-responsive-sm">
+<table class="table table-sm table-borderless">
+    <thead class="table-primary">
+        <tr>
+            <th>ID</th>
+            <th>User name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listUsers)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.userName</td>
+                <td>@item.phoneNumber</td>
+                <td>@item.email</td>
+                <td>@item.password</td>
+                <td>@item.CreatedDate</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Users/Edit?id=@item.id">Edit</a> 
+                    <a class="btn btn-danger btn-sm" href="/Users/BossDelete?id=@item.id">Delete</a>
+                    
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+<br />
+<br />
+
+<a class="btn btn-secondary btn-sm" href="/">Home</a>  <a class="btn btn-primary btn-sm" href="/Products/BossView">Products</a>  <a class="btn btn-danger btn-sm" href="exit">Exit</a>
+
+

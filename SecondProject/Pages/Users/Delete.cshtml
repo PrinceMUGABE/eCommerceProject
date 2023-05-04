@@ -1,0 +1,39 @@
+﻿@page
+@model SecondProject.Pages.Users.DeleteModel
+@{
+}
+<br />
+<h2>Manage Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Username</td>
+            <td>Phone</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Created-At</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.userListInfo)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.userName</td>
+                <td>@item.phoneNumber</td>
+                <td>@item.email</td>
+                <td>@item.password</td>
+                <td>@item.CreatedDate</td>
+                
+                <td>
+                    
+                    <a class="btn btn-danger btn-sm" href="/Users/BossDelete?phone=@item.phoneNumber">Delete</a>
+                    <a class="btn btn-primary btn-sm" href="/Users/BossView">Cancel</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

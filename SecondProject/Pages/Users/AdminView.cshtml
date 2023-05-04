@@ -1,0 +1,42 @@
+﻿@page
+@model SecondProject.Pages.Users.AdminViewModel
+@{
+}
+<br />
+<h2 class="h2" text-align="center">Manage Users</h2>
+<a class='btn btn-primary btn-sm align-center' href="/Users/Create">New User</a>
+<div class="table-responsive-sm">
+<table class="table table-sm table-hover table-borderless">
+    <thead class="table-primary">
+        <tr>
+            <th>ID</th>
+            <th>User name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Passowrd</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listUsers)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.userName</td>
+                <td>@item.phoneNumber</td>
+                <td>@item.email</td>
+                <td>@item.password</td>
+                <td>@item.CreatedDate</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Users/Edit?id=@item.id">Edit</a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+<br />
+
+<a class="btn btn-secondary col-sm-3" href="/Products/Index">Products</a>

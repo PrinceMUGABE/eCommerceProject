@@ -1,0 +1,19 @@
+﻿@page
+@using System.Data.SqlClient
+@{
+    String id = Request.Query["id"];
+    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=eCommerceProject;Integrated Security=True");
+
+    try
+    {
+        con.Open();
+        SqlCommand cmd = new SqlCommand("exec deleteUserById'"+id+"'",con);
+        cmd.ExecuteNonQuery();
+
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error: " + ex.Message);
+    }
+    Response.Redirect("/Users/BossView");
+}

@@ -1,0 +1,45 @@
+﻿@page
+@model SecondProject.Pages.Clients.CreateModel
+@{
+}
+<br />
+<h2>Buy Product</h2>
+<form method="post">
+    <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="name" value="@Model.ClientInfo.name" />
+        </div>
+    </div>
+    <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">Phone</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="phone" value="@Model.ClientInfo.phone" />
+        </div>
+    </div>
+    <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">Product</label>
+        <select class="col-sm-3">
+             @foreach(var item in @Model.listProducts())
+                {
+           <option>@item.proct_name</option>
+                }
+        </select>
+    </div>
+    <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">Quantity</label>
+        <div class="col-sm-3">
+            <input type="number" class="form-control" name="quantity" value="@Model.ClientInfo.quantity" />
+        </div>
+    </div>
+      <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">Price</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="quantity" value="@Model.amount" readonly />
+        </div>
+    </div>
+    <div class="row mb-1">
+        <button type="submit" class="btn-primary col-sm-auto">Submit</button>
+       <a class="btn btn-danger col-sm-auto" href="/">Cancel</a>
+    </div>
+</form>

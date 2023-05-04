@@ -1,0 +1,43 @@
+﻿@page
+@model SecondProject.Pages.Products.BossViewModel
+@{
+}
+
+<br />
+<h2>Manage Products</h2>
+<a class="btn btn-primary btn-sm" href="/Products/Create">Add Product</a>
+
+
+<div class="table-responsive-sm">
+<table class="table table-sm table-hover table-borderless">
+    <thead class="table-primary">
+        <tr>
+            <th>Product ID</th>
+            <th>Product name</th>
+            <th>Product Price</th>
+            <th>Created Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listproducts)
+        {
+            <tr>
+                <td>@item.product_id</td>
+                <td>@item.proct_name</td>
+                <td>@item.product_price</td>
+                <td>@item.created_at</td>
+               
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Products/Edit?id=@item.product_id">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Products/Delete?id=@item.product_id">Delete</a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+<br />
+
+<a class="btn btn-secondary col-sm-1" href="/">HOME</a> <a class="btn btn-secondary col-sm-1" href="/Users/BossView">Users</a>

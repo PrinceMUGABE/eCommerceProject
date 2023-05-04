@@ -1,0 +1,44 @@
+﻿@page
+@model SecondProject.Pages.Users.IndexModel
+@{
+}
+<br />
+<h1>Login Page</h1>
+
+@if (Model.errorMessage.Length>0)
+{
+    <di class="alert-alert-warning alert-dimissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-lable="close"></button>
+    </di>
+}
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 form-label-sm">Username</label>
+        <div class="col-sm-3">
+        <input type="text" class="form-control" name="username" value="@Model.userInfos.userName" />
+        </div>
+    </div>
+    <br />
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-sm">Password</label>
+        <div class="col-sm-3">
+        <input type="password" class="form-control" name="passwd" value="@Model.userInfos.password" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            Don't have an account?<a class="btn btn-outline-primary" href="/Users/Create">Signup</a>
+        </div>
+    </div>
+
+</form>

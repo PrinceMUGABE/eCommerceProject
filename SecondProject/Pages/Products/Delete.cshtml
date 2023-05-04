@@ -1,0 +1,21 @@
+﻿@page
+@using System.Data.SqlClient
+@{
+
+    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=eCommerceProject;Integrated Security=True");
+    String id = Request.Query["id"];
+    try
+    {
+        con.Open();
+        SqlCommand cmd = new SqlCommand("exec deleteProductById '"+Int32.Parse(id)+"'",con);
+        cmd.ExecuteNonQuery();
+
+    }catch(Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+        return;
+    }
+
+    Console.WriteLine("Product successfully deleted");
+    Response.Redirect("/Products/BossView");
+}

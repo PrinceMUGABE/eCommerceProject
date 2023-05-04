@@ -1,0 +1,54 @@
+﻿@page
+@model SecondProject.Pages.Products.EditModel
+@{
+}
+<br />
+<h2 class="h2">Update Product</h2>
+
+@if (Model.errorMessage.Length>0)
+{
+    <div class="alert alert-warning alert-dismissible fade show  " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn btn-close" data-data-dismiss="alert" ariaaria-label="dismiss"></button>
+    </div>
+}
+<form method="post" class="container">
+
+    <input type="hidden" class="form-control" name="id" value="@Model.ProductInfo.product_id" />
+    <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="name" value="@Model.ProductInfo.proct_name" />
+        </div>
+
+    </div>
+    <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">Price</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="price" value="@Model.ProductInfo.product_price" />
+        </div>
+
+    </div>
+
+   @* <div class="row mb-1">
+        <label class="col-sm-1 col-sm-lable">createdOn</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="created_at" value="@Model.ProductInfo.created_at" />
+        </div>
+    </div>
+    *@
+    <br />
+    @if (Model.successmessage.Length>0)
+{
+    <div class="alert alert-success alert-dismissible fade show  " role="alert">
+        <strong>@Model.successmessage</strong>
+        <button type="button" class="btn btn-close" data-data-dismiss="alert" ariaaria-label="dismiss"></button>
+    </div>
+}
+
+    <div class="row mb-1">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-light" href="/Products/Index">Cancel</a>
+    </div>
+
+</form>

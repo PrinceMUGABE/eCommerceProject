@@ -1,0 +1,35 @@
+﻿@page
+@model SecondProject.Pages.Users.AdminEditorPageModel
+@{
+}
+<br />
+<h2>Manage Users</h2>
+<a class="btn btn-primary btn-sm" href="/Users/Create">Add New User</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>User name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Passowrd</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach(var item in Model.listuserInfos)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.userName</td>
+                <td>@item.phoneNumber</td>
+                <td>@item.email</td>
+                <td>@item.password</td>
+                <td>@item.CreatedDate</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+    </table>

@@ -1,0 +1,55 @@
+﻿@page
+@model SecondProject.Pages.Users.CreateModel
+@{
+}
+<br />
+<h1 class="h1 align-content-center">Signup Page</h1>
+
+@if (Model.errorMessage.Length>0)
+{
+    <di class="alert-alert-warning alert-dimissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-lable="close"></button>
+    </di>
+}
+<form method="post" class="container">
+    <div class="container-fluid">
+    <div class="row mb-1">
+        <label class="col-sm-1 col-form-label">Username</label>
+        <div class="col-sm-3">
+        <input type="text" class="form-control" name="username" value="@Model.userInfos.userName" />
+        </div>
+    </div>
+    
+       <div class="row mb-1">
+        <label class="col-sm-1 col-form-label">Phone</label>
+        <div class="col-sm-3">
+        <input type="text" class="form-control" name="phone" value="@Model.userInfos.phoneNumber" />
+        </div>
+    </div>
+   
+       <div class="row mb-1">
+        <label class="col-sm-1 col-form-label">Email</label>
+        <div class="col-sm-3">
+        <input type="email" class="form-control" name="email" value="@Model.userInfos.email" />
+        </div>
+    </div>
+
+    <div class="row mb-1">
+        <label class="col-sm-1 col-form-label">Password</label>
+        <div class="col-sm-3">
+        <input type="text" class="form-control" name="passwd" value="@Model.userInfos.password" />
+        </div>
+    </div>
+    
+
+    <div class="row mb-1">
+        <div class="offset-sm-1 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">SignUp</button>  have an account?<a class="btn btn-outline-secondary" href="/Users/Index">Login</a>   
+        </div>
+
+    </div>
+
+  </div>
+
+</form>
